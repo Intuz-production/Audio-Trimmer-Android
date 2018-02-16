@@ -5,6 +5,7 @@ Please follow below steps to integrate this control in your next project.
 
 <br>
 <h1>Features</h1>
+
 - Ability to record your audio and trim it.
 - Ability to play selected range of audio before trimming.
 - After trimming if you don’t like the audio then you can get the original file again by pressing “Reset”.
