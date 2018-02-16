@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorGrayAlpha">#80000000</color>
+    <color name="colorBlue">#0e1f2f</color>
+    <color name="colorTextGray">#ADADAD</color>
+    <color name="colorBg">#3be3e3</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorGridLine">#00ed1b24</color>
+    <color name="colorSelectionBorder">#9c41bc</color>
+    <color name="colorWaveformBg">#253571</color>
+    <color name="colorPlaybackIndicator">#b2253571</color>
+    <color name="colorTimeCode">#dd253571</color>
+    <color name="colorTimeCodeShadow">#aa253571</color>
+    <color name="waveformSelected">#adb5cc</color>
+    <color name="waveformUnselected">#adb5cc</color>
+    <color name="waveformUnselectedBackground">#e8e6e7</color>
+</resources>

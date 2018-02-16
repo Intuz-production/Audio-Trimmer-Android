@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayAlpha"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBg"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtAudioUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:text="@string/upload"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/txtAudioCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="10dp"
+                android:text="@string/cancel"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:id="@+id/llAudioCapture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/txtAudioRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_record_btn1" />
+
+                <TextView
+                    android:id="@+id/txtAudioRecordTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="00:01:00"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlAudioEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/txtAudioEditTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Edit Audio"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/llAudioBottom"
+                    android:layout_below="@+id/txtAudioEditTitle"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <com.demo.audiotrimmer.customAudioViews.WaveformView
+                            android:id="@+id/audioWaveform"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_marginBottom="25dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorWaveformBg" />
+
+                        <com.demo.audiotrimmer.customAudioViews.MarkerView
+                            android:id="@+id/markerStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="start marker"
+                            android:nextFocusDown="@+id/markerEnd"
+                            android:src="@drawable/marker_left" />
+
+                        <TextView
+                            android:id="@+id/txtStartPosition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textColor="@color/colorTextGray"
+                            android:textSize="12sp" />
+
+                        <com.demo.audiotrimmer.customAudioViews.MarkerView
+                            android:id="@+id/markerEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="end marker"
+                            android:nextFocusDown="@+id/info"
+                            android:nextFocusUp="@+id/markerStart"
+                            android:src="@drawable/marker_right" />
+
+                        <TextView
+                            android:id="@+id/txtEndPosition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00.01"
+                            android:textColor="@color/colorTextGray"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtAudioRecordTimeUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="00:01:00"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llAudioBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Reset"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:padding="5dp"
+                            android:text="Done"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorBlue"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/txtAudioPlay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_play_btn" />
+
+                        <TextView
+                            android:id="@+id/txtAudioRecordUpdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/ic_audiostartrecord" />
+
+                        <TextView
+                            android:id="@+id/txtAudioCrop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/ic_edit_btn" />
+
+                        <TextView
+                            android:id="@+id/txtAudioDone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/ic_crop_btn_fill"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/txtAudioReset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_refresh_btn" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
