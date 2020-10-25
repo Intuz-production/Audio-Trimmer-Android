@@ -502,7 +502,7 @@ public class SoundFile {
         // Some devices have problems reading mono AAC files (e.g. Samsung S3). Making it stereo.
         int numChannels = (mChannels == 1) ? 2 : mChannels;
 
-        String mimeType = "audio/mp4a-latm";
+        String mimeType = "audio/aac";
         int bitrate = 64000 * numChannels;  // rule of thumb for a good quality: 64kbps per channel.
         MediaCodec codec = MediaCodec.createEncoderByType(mimeType);
         MediaFormat format = MediaFormat.createAudioFormat(mimeType, mSampleRate, numChannels);
